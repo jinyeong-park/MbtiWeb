@@ -27,6 +27,11 @@
         <button id='A' type="button" class="btn btn-primary mt-5" >Start the test</button>
         <button id='B' type="button" class="btn btn-primary mt-5">Start the test</button>
     </article>
+    <article class="result">
+        <img id="img" src="" alt="">
+        <h2 id="animal">Animal Name</h2>
+        <h3 id="explain">Explain</h2>
+    </article>
 
     <input type="hidden" id="EI" value="0">
     <input type="hidden" id="SN" value="0">
@@ -67,6 +72,10 @@
             next();
         });
         function next() {
+            if (num == 13) {
+                $(".question").hide();
+                $(".result").show();
+            }
             $('.progress-bar').attr('style', 'width: calc(100/12*'+ num + '%)');
             $("#title").html(q[num]["title"]);
             $("#type").val(q[num]["type"]);
