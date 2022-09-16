@@ -55,7 +55,25 @@
             10: {"title": "Question 10", "type": "JP", "A":"J", "B": "P"},
             11: {"title": "Question 11", "type": "JP", "A":"J", "B": "P"},
             12: {"title": "Question 12", "type": "JP", "A":"J", "B": "P"}
+        }
 
+        var result = {
+            "ISTJ": {"animal": "Hippo", "explain": "하마 설명", "img": "hippo.jpg"},
+            "ISFJ": {"animal": "Owl", "explain": "하마 설명", "img": "owl.jpg"},
+            "INFJ": {"animal": "Water buffalo", "explain": "하마 설명", "img": "buffalo.jpg"},
+            "INTJ": {"animal": "Cheetah", "explain": "하마 설명", "img": "cheetah.jpg"},
+            "ISTP": {"animal": "Sloth", "explain": "하마 설명", "img": "sloth.jpg"},
+            "ISFP": {"animal": "Turtle", "explain": "하마 설명", "img": "turtle.jpg"},
+            "INFP": {"animal": "Elephant", "explain": "하마 설명", "img": "elephant.jpg"},
+            "ISTP": {"animal": "Chimpanzee", "explain": "하마 설명", "img": "chimpanzee.jpg"},
+            "ESTP": {"animal": "Crocodile", "explain": "하마 설명", "img": "crocodile.jpg"},
+            "ESFP": {"animal": "Meerkat", "explain": "하마 설명", "img": "meerkat.jpg"},
+            "ENFP": {"animal": "Lion", "explain": "하마 설명", "img": "lion.jpg"},
+            "ENTP": {"animal": "Sunbird", "explain": "하마 설명", "img": "sunbird.jpg"},
+            "ESTJ": {"animal": "Giraffe", "explain": "하마 설명", "img": "giraffe.jpg"},
+            "ESFJ": {"animal": "Gorilla", "explain": "하마 설명", "img": "gorilla.jpg"},
+            "ENFJ": {"animal": "Capybara", "explain": "하마 설명", "img": "capybara.jpg"},
+            "ENTJ": {"animal": "Tiger", "explain": "하마 설명", "img": "tiger.jpg"}
         }
         function start() {
             $(".start").hide();
@@ -84,6 +102,11 @@
                 ($("#JP").val() < 2) ? mbti += 'P' : mbti += 'J';
                 alert(mbti);
                 
+                // change image and description according to the result
+                $("#img").attr('str', result[mbti]["img"])
+                $("#animal").attr('str', result[mbti]["animal"])
+                $("#explain").attr('str', result[mbti]["explain"])
+
             } else {
                 $('.progress-bar').attr('style', 'width: calc(100/12*'+ num + '%)');
                 $("#title").html(q[num]["title"]);
